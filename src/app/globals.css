@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #080B10;
+  color: #ffffff;
+}
+
+/* =========================================
+   BULLETPROOF CUSTOM CRYPTO COLORS BYPASS
+   ========================================= */
+.bg-void { background-color: #080B10 !important; }
+.bg-surface { background-color: #111620 !important; }
+
+.text-cyanGlow { color: #00F0FF !important; }
+.text-forgeAmber { color: #FF8A00 !important; }
+
+.border-cyanGlow { border-color: #00F0FF !important; }
+.border-forgeAmber { border-color: #FF8A00 !important; }
+
+.bg-crypto-gradient { 
+  background-image: linear-gradient(to right, #00F0FF, #FF8A00) !important; 
+}
+
+/* Custom Hover States */
+.hover\:text-cyanGlow:hover { color: #00F0FF !important; }
+.hover\:border-cyanGlow:hover { border-color: #00F0FF !important; }
