@@ -50,9 +50,11 @@ export default function RootLayout({
             
             {/* Navigation */}
             <div className="flex space-x-6 text-sm font-semibold text-gray-300">
-              <Link href="/" className="hover:text-cyanGlow transition">Home</Link>
-              <Link href="/projects" className="hover:text-cyanGlow transition">Projects</Link>
-            </div>
+  <Link href="/" className="hover:text-cyanGlow transition">Home</Link>
+  <Link href="/about" className="hover:text-cyanGlow transition">About</Link>
+  <Link href="/projects" className="hover:text-cyanGlow transition">Projects</Link>
+</div>
+
           </div>
         </nav>
 
