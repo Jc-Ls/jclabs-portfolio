@@ -52,7 +52,9 @@ export default function RootLayout({
             <div className="flex space-x-6 text-sm font-semibold text-gray-300">
   <Link href="/" className="hover:text-cyanGlow transition">Home</Link>
   <Link href="/about" className="hover:text-cyanGlow transition">About</Link>
+  <Link href="/skills" className="hover:text-cyanGlow transition">Skills</Link>
   <Link href="/projects" className="hover:text-cyanGlow transition">Projects</Link>
+  <Link href="/contact" className="hover:text-cyanGlow transition">Contact</Link>
 </div>
 
           </div>
