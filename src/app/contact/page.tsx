@@ -1,79 +1,32 @@
-"use client";
+import React from 'react';
 
-export default function Contact() {
-  // We will connect this to a real email sender (like Resend) later!
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    alert("Form UI is working! We will connect the backend email sender soon.");
-  };
-
+export default function ContactPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20 min-h-screen flex flex-col justify-center items-center">
-      
-      {/* Page Header */}
-      <div className="text-center mb-16 w-full">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
-          Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyanGlow to-forgeAmber">Connect</span>
+    <div className="min-h-screen bg-[#080B10] text-white flex items-center justify-center p-6">
+      <div className="max-w-3xl w-full text-center">
+        <h1 className="text-6xl md:text-9xl font-bold bg-gradient-to-b from-white to-white/20 bg-clip-text text-transparent mb-12">
+          Start a Project.
         </h1>
-        <p className="text-gray-400 text-lg max-w-xl mx-auto">
-          Have a project in mind, need a logistical ecosystem built, or just want to chat? Drop me a message.
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="mailto:your-email@example.com" className="bg-[#111620] border border-white/5 p-6 rounded-2xl hover:bg-[#00F0FF] hover:text-[#080B10] transition-all duration-500 group">
+            <span className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-[#080B10]/60 mb-2">Email</span>
+            Inquiry →
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" className="bg-[#111620] border border-white/5 p-6 rounded-2xl hover:bg-[#FF8A00] hover:text-[#080B10] transition-all duration-500 group">
+            <span className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-[#080B10]/60 mb-2">Professional</span>
+            LinkedIn →
+          </a>
+          <a href="https://github.com/jc-ls" className="bg-[#111620] border border-white/5 p-6 rounded-2xl hover:bg-white hover:text-[#080B10] transition-all duration-500 group">
+            <span className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-[#080B10]/60 mb-2">Source Code</span>
+            GitHub →
+          </a>
+        </div>
+        
+        <p className="mt-20 text-gray-600 text-sm tracking-tighter">
+          Currently based in Lagos, Nigeria. Operating globally. 24/7 System Reliability.
         </p>
       </div>
-
-      {/* The Contact Form */}
-      <form 
-        onSubmit={handleSubmit} 
-        className="bg-surface border border-gray-800 p-8 md:p-12 rounded-3xl shadow-2xl w-full max-w-2xl relative group"
-      >
-        {/* Top Accent Line */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyanGlow to-forgeAmber rounded-t-3xl opacity-80"></div>
-        
-        <div className="space-y-6">
-          
-          {/* Name Input */}
-          <div>
-            <label className="block text-sm font-bold text-gray-300 mb-2">Name</label>
-            <input 
-              type="text" 
-              required 
-              className="w-full bg-void border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-cyanGlow focus:ring-1 focus:ring-cyanGlow transition-colors" 
-              placeholder="Your full name" 
-            />
-          </div>
-          
-          {/* Email Input */}
-          <div>
-            <label className="block text-sm font-bold text-gray-300 mb-2">Email</label>
-            <input 
-              type="email" 
-              required 
-              className="w-full bg-void border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-cyanGlow focus:ring-1 focus:ring-cyanGlow transition-colors" 
-              placeholder="you@example.com" 
-            />
-          </div>
-          
-          {/* Message Textarea */}
-          <div>
-            <label className="block text-sm font-bold text-gray-300 mb-2">Message</label>
-            <textarea 
-              required 
-              rows={5} 
-              className="w-full bg-void border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-cyanGlow focus:ring-1 focus:ring-cyanGlow transition-colors resize-none" 
-              placeholder="Tell me about your project or idea..."
-            ></textarea>
-          </div>
-          
-          {/* Submit Button */}
-          <button 
-            type="submit" 
-            className="w-full py-4 mt-4 rounded-xl bg-gradient-to-r from-cyanGlow to-forgeAmber text-void font-extrabold text-lg hover:scale-[1.02] transition-transform shadow-[0_0_20px_rgba(0,240,255,0.2)]"
-          >
-            Send Message
-          </button>
-
-        </div>
-      </form>
-
     </div>
   );
 }

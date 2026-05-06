@@ -1,89 +1,60 @@
-export default function About() {
-  const services = [
-    {
-      title: "Full-Stack & Static Web Development",
-      description: "From blazing-fast static promotional sites to complex, interactive web applications using React and Next.js.",
-      icon: "🌐"
-    },
-    {
-      title: "Database Architecture & APIs",
-      description: "Designing scalable, secure backend systems and RESTful APIs using Neon DB, MongoDB, and Supabase.",
-      icon: "💾"
-    },
-    {
-      title: "Systems & App Architecture",
-      description: "Structuring large-scale digital ecosystems, including multi-platform logistics applications and secure email routing.",
-      icon: "🏗️"
-    }
-  ];
+import React from 'react';
 
+export default function AboutPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20 min-h-screen">
-      
-      <div className="flex flex-col lg:flex-row gap-16 items-start">
-        
-        {/* Left Column: The Narrative */}
-        <div className="lg:w-1/2 space-y-8">
-          <div>
-            <h2 className="text-cyanGlow font-mono tracking-widest uppercase text-sm font-bold mb-3">
-              About The Developer
-            </h2>
-            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyanGlow to-forgeAmber">Olowojare Muhammed</span>
-            </h1>
+    <div className="min-h-screen bg-[#080B10] text-white p-6 md:p-24">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <header className="mb-20">
+          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-[#00F0FF] to-[#FF8A00] bg-clip-text text-transparent mb-6">
+            The Architect.
+          </h1>
+          <p className="text-gray-400 text-xl font-light tracking-wide">
+            Olowojare Muhammed — Bridging Public Governance and Digital Ecosystems.
+          </p>
+        </header>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          {/* Left Column: The Narrative */}
+          <div className="space-y-8">
+            <section>
+              <h2 className="text-[#00F0FF] text-xs font-bold uppercase tracking-[0.3em] mb-4">Background</h2>
+              <p className="text-gray-300 leading-relaxed text-lg">
+                My journey began at the intersection of public administration and healthcare, where I learned the value of 
+                <strong> structured systems</strong> and <strong>scalable solutions</strong>. Transitioning into 
+                full-stack engineering wasn't just a career change—it was a mission to build digital tools that 
+                function as efficiently as vital public services.
+              </p>
+            </section>
+
+            <section className="bg-[#111620] border border-white/5 p-8 rounded-3xl">
+              <h2 className="text-[#FF8A00] text-xs font-bold uppercase tracking-[0.3em] mb-4">Philosophy</h2>
+              <p className="text-gray-400 leading-relaxed italic">
+                "I don't just write code; I engineer digital environments. Whether it is a logistics hub like Quickserve 
+                or a cultural platform like Ilorin Auto Fest, the goal is always the same: Precision, Performance, and Premium UX."
+              </p>
+            </section>
           </div>
 
-          <div className="space-y-6 text-gray-400 leading-relaxed text-lg">
-            <p>
-              I am a self-taught Full-Stack Developer based in Nigeria, driven by a singular mission: using internet technologies to architect solutions for real-world societal and community challenges.
-            </p>
-            <p>
-              My background is unconventional, and that is my greatest strength. With a degree and an ongoing MSc in Public Administration, I understand large-scale human systems, governance, and organizational needs. I taught myself software engineering to bridge the gap between public administration and digital innovation. 
-            </p>
-            <p>
-              I thrive on building comprehensive ecosystems from the ground up. Whether it is engineering a bootstrapped, multi-interface logistics platform like Quickserve, or deploying scalable databases with Neon DB and Supabase, my approach is always the same: highly adaptable, relentlessly curious, and confident enough to build anything.
-            </p>
-          </div>
-
-          {/* Core Tech Stack Pills */}
-          <div className="pt-4">
-            <h3 className="text-white font-bold mb-4">Core Arsenal:</h3>
-            <div className="flex flex-wrap gap-3">
-              {['JavaScript', 'TypeScript', 'Python', 'Next.js', 'React', 'Neon DB', 'MongoDB', 'Supabase'].map((tech) => (
-                <span key={tech} className="px-4 py-2 bg-surface border border-gray-800 rounded-full text-sm font-medium text-gray-300 shadow-sm">
-                  {tech}
-                </span>
-              ))}
+          {/* Right Column: Expertise Grid (Bento Style) */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-[#111620] p-6 rounded-2xl border border-white/5">
+              <h3 className="text-2xl font-bold text-white mb-2">4+</h3>
+              <p className="text-gray-500 text-xs uppercase tracking-widest">Tech Stacks</p>
+            </div>
+            <div className="bg-[#111620] p-6 rounded-2xl border border-white/5">
+              <h3 className="text-2xl font-bold text-white mb-2">10+</h3>
+              <p className="text-gray-500 text-xs uppercase tracking-widest">Digital Ventures</p>
+            </div>
+            <div className="col-span-2 bg-gradient-to-br from-[#111620] to-[#080B10] p-8 rounded-2xl border border-white/5 hover:border-[#00F0FF]/30 transition-colors">
+              <h3 className="text-[#00F0FF] font-semibold mb-2 text-sm uppercase tracking-widest">Core Mission</h3>
+              <p className="text-gray-400 text-sm">
+                Transforming Jare’s Choice Labs into a global powerhouse for high-performance logistics, 
+                fintech, and community-driven platforms.
+              </p>
             </div>
           </div>
         </div>
-
-        {/* Right Column: Services Grid */}
-        <div className="lg:w-1/2 w-full mt-10 lg:mt-0">
-          <h2 className="text-2xl font-bold text-white mb-8">Specialized Expertise</h2>
-          
-          <div className="space-y-6">
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                className="bg-surface border border-gray-800 p-6 rounded-2xl hover:border-cyanGlow transition duration-300 group shadow-lg hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] flex gap-5 items-start"
-              >
-                <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyanGlow transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
       </div>
     </div>
   );
