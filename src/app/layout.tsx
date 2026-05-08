@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: "Jare's Choice Labs | Enterprise Architecture",
-  description: "Engineering Scalable Digital Ecosystems. Portfolio of Olowojare Muhammed.",
+  description: "Engineering Absolute Scale. Portfolio of Olowojare Muhammed.",
 };
 
 export default function RootLayout({
@@ -14,12 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-[#0B132B] text-white antialiased selection:bg-[#C5A059] selection:text-[#0B132B]">
+      {/* flex-col and min-h-screen ensure the footer always stays at the bottom */}
+      <body className="bg-black text-white antialiased selection:bg-white selection:text-black flex flex-col min-h-screen">
         <Navbar />
-        {/* Added padding-top to account for the fixed Navbar */}
-        <div className="pt-20">
+        <div className="flex-grow">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );

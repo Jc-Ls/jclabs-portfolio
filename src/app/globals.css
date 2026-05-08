@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #0B132B;
+  --background: #000000;
   --foreground: #ffffff;
 }
 
@@ -15,18 +15,16 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar for Premium Feel 
-*/
+/* Brutalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #080D1F;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A2642;
-  border-radius: 4px;
+  background: #333333;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A059;
+  background: #ffffff;
 }
