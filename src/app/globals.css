@@ -28,3 +28,22 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #ffffff;
 }
+/* Add this below your scrollbar CSS */
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Force specific elements to use the premium fonts */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
