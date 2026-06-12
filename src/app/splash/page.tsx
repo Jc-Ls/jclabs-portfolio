@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
@@ -19,7 +19,7 @@ export default function SplashScreen() {
     return null;
   }
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -34,22 +34,22 @@ export default function SplashScreen() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, type: 'tween' },
+      transition: { duration: 0.8 },
     },
   };
 
-  const logoVariants = {
+  const logoVariants: Variants = {
     hidden: { scale: 0, opacity: 0, rotate: -180 },
     visible: {
       scale: 1,
       opacity: 1,
       rotate: 0,
-      transition: { duration: 1, type: 'tween' },
+      transition: { duration: 1 },
     },
   };
 
@@ -76,12 +76,12 @@ export default function SplashScreen() {
             <motion.div
               className="absolute inset-0 border-2 border-cyan-400 rounded-full"
               animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-              transition={{ duration: 3, repeat: Infinity, type: 'tween' }}
+              transition={{ duration: 3, repeat: Infinity }}
             />
             <motion.div
               className="absolute inset-2 border border-purple-400 rounded-full"
               animate={{ rotate: -360, scale: [1, 0.9, 1] }}
-              transition={{ duration: 4, repeat: Infinity, type: 'tween' }}
+              transition={{ duration: 4, repeat: Infinity }}
             />
             {/* Logo placeholder - will show actual logo */}
             <div className="absolute inset-4 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-black text-xl">
