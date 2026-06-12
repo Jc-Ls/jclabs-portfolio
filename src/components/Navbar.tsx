@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { DigitalClock } from './DigitalClock';
 
 export const Navbar = () => {
@@ -34,21 +34,21 @@ export const Navbar = () => {
     { label: 'Contact', href: '/contact', icon: '⚡' },
   ];
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     hidden: { x: '-100%', opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.3, ease: 'easeInOut' },
+      transition: { duration: 0.3 },
     },
     exit: {
       x: '-100%',
       opacity: 0,
-      transition: { duration: 0.3, ease: 'easeInOut' },
+      transition: { duration: 0.3 },
     },
   };
 
-  const linkVariants = {
+  const linkVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: (i: number) => ({
       opacity: 1,
