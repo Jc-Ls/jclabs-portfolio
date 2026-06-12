@@ -13,11 +13,11 @@ export const Footer = () => {
           </span>
         </div>
 
-        {/* Social Comms (Replace # with your actual links) */}
+        {/* Social Comms */}
         <div className="flex space-x-8 font-mono text-[10px] uppercase tracking-widest text-neutral-500">
-          <a href="#" className="hover:text-white transition-colors">GitHub</a>
-          <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-          <a href="#" className="hover:text-white transition-colors">X / Twitter</a>
+          <a href="https://github.com/Jc-Ls" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+          <a href="https://linkedin.com/in/olowojare" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">X / Twitter</a>
         </div>
 
         {/* System Status */}

@@ -1,18 +1,8 @@
 import React from 'react';
 import { Reveal } from '@/components/Reveal';
+import { HOMEPAGE_PROJECTS } from '@/constants/projects';
 
 export default function HomePage() {
-  const projects = [
-    { name: "TrustRelay", type: "Fintech Core", status: "Deployed" },
-    { name: "Quickserve", type: "Logistics SaaS", status: "Deployed" },
-    { name: "Wedding-OS", type: "Event Ecosystem", status: "Venture" },
-    { name: "Dispatchr", type: "Fleet Management", status: "Deployed" },
-    { name: "Al-Kawthar", type: "Digital Quran", status: "Deployed" },
-    { name: "Araba2027", type: "Political Platform", status: "Archived" },
-    { name: "Beacon-Hub", type: "Content Engine", status: "Deployed" },
-    { name: "Auto Fest", type: "Event Architecture", status: "Deployed" },
-  ];
-
   return (
     <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black pt-24 pb-20 overflow-hidden">
       
@@ -88,7 +78,7 @@ export default function HomePage() {
             
             {/* 1px Border Grid System - Staggered Animations */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
-              {projects.map((project, idx) => (
+              {HOMEPAGE_PROJECTS.map((project, idx) => (
                 <Reveal key={idx} delay={idx * 100}>
                   <a href="/projects" className="group bg-black p-8 hover:bg-white/5 transition-colors flex flex-col justify-between min-h-[200px] h-full block">
                     <div>

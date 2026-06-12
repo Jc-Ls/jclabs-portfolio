@@ -16,20 +16,25 @@ export const Reveal = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Stop observing once it has revealed
           observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.1, // Triggers when 10% of the element is visible
+        threshold: 0.1,
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const element = ref.current;
+    if (element) {
+      observer.observe(element);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+      observer.disconnect();
+    };
   }, []);
 
   return (

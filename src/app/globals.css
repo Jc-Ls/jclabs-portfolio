@@ -3,32 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #0f172a;
   --foreground: #ffffff;
 }
 
 body {
-  background-color: var(--background);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Brutalist Scrollbar */
+/* Gradient Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0f172a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: linear-gradient(180deg, #06b6d4, #a855f7);
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
+  background: linear-gradient(180deg, #22d3ee, #c4b5fd);
 }
-/* Add this below your scrollbar CSS */
 
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.5; }
@@ -39,6 +39,14 @@ body {
   animation: pulse-slow 8s ease-in-out infinite;
 }
 
+/* Reduce animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-slow {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
 /* Force specific elements to use the premium fonts */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-space), sans-serif;
@@ -46,4 +54,35 @@ h1, h2, h3, h4, h5, h6 {
 
 .font-mono {
   font-family: var(--font-mono), monospace;
+}
+
+/* Reusable Component Utilities */
+@layer components {
+  .text-label {
+    @apply text-[10px] font-mono uppercase tracking-widest text-cyan-400;
+  }
+
+  .border-accent {
+    @apply border-cyan-500/20;
+  }
+
+  .card-brutalist {
+    @apply bg-gradient-to-br from-slate-800/40 to-slate-900/40 border border-cyan-500/20 p-8 backdrop-blur-sm;
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-7xl font-black tracking-tighter leading-[0.9];
+  }
+
+  .nav-link {
+    @apply text-neutral-400 hover:text-cyan-300 transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 text-slate-950 px-6 py-3 font-bold hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 rounded-lg;
+  }
+
+  .btn-secondary {
+    @apply border border-cyan-400/50 text-cyan-300 px-6 py-3 hover:text-cyan-100 hover:border-cyan-300 hover:bg-cyan-500/5 transition-all duration-300 rounded-lg;
+  }
 }

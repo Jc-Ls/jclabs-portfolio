@@ -7,7 +7,22 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brutalist: {
+          dark: '#050505',
+          accent: '#EAB308',
+          neutral: '#333333',
+        },
+      },
+      animation: {
+        'pulse-slow': 'pulse-slow 8s ease-in-out infinite',
+      },
+      fontFamily: {
+        space: ['var(--font-space)'],
+        mono: ['var(--font-mono)'],
+      },
+    },
   },
   plugins: [],
 };

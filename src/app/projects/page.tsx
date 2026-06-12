@@ -1,56 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
+import { PROJECTS } from '@/constants/projects';
 
 export default function ProjectsPage() {
-  // Your full project arsenal data
-  const projects = [
-    {
-      id: "01",
-      name: "Quickserve",
-      type: "Logistics SaaS",
-      status: "Acquisition Open",
-      description: "High-performance delivery and logistics architecture built for zero-latency dispatching and fleet management.",
-      tech: ["Next.js", "WebSockets", "PostgreSQL"],
-      // NOTE TO OLOWOJARE: Drop your image in the "public" folder and update this path
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" 
-    },
-    {
-      id: "02",
-      name: "TrustRelay",
-      type: "Fintech Core Protocol",
-      status: "Operational",
-      description: "Secure, high-frequency financial transaction relayer designed with enterprise-grade encryption.",
-      tech: ["React", "Node.js", "Redis"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "03",
-      name: "Wedding-OS",
-      type: "Event Ecosystem",
-      status: "Seeking Partner",
-      description: "Comprehensive digital operating system for high-end event management, guest tracking, and vendor coordination.",
-      tech: ["Next.js", "Tailwind CSS", "Prisma"],
-      image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "04",
-      name: "Al-Kawthar",
-      type: "Digital Quran",
-      status: "Deployed",
-      description: "A highly optimized, accessible digital Quran application engineered for seamless reading and global reach.",
-      tech: ["React Native", "API Integrations"],
-      image: "https://images.unsplash.com/photo-1608138378351-4091a080d9ee?q=80&w=1000&auto=format&fit=crop"
-    },
-    {
-      id: "05",
-      name: "Dispatchr",
-      type: "Fleet Management",
-      status: "Deployed",
-      description: "Real-time routing and dispatching system optimized for complex supply chain logistics.",
-      tech: ["React", "Maps API", "Node.js"],
-      image: "https://images.unsplash.com/photo-1586528116311-ad8ed7e66a5a?q=80&w=1000&auto=format&fit=crop"
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-black text-white pt-32 pb-20 px-6 md:px-12 selection:bg-white selection:text-black">
       <div className="max-w-7xl mx-auto">
@@ -69,17 +21,21 @@ export default function ProjectsPage() {
 
         {/* PROJECTS GRID */}
         <div className="space-y-32">
-          {projects.map((project, index) => (
+          {PROJECTS.map((project, index) => (
             <div key={project.id} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center group">
               
               {/* Left Side: 16:9 Image Container */}
               <div className={`lg:col-span-7 ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
                 <div className="relative aspect-video bg-neutral-900 border border-white/10 overflow-hidden">
                   {/* The Image */}
-                  <img 
-                    src={project.image} 
+                  <Image
+                    src={project.image}
                     alt={project.name}
-                    className="object-cover w-full h-full grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                    fill
+                    priority={index === 0}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 60vw"
+                    className="object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />
                   {/* Brutalist Corner Accents */}
                   <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/50 opacity-0 group-hover:opacity-100 transition-opacity m-4"></div>
@@ -118,9 +74,14 @@ export default function ProjectsPage() {
                 </div>
 
                 <div>
-                  <button className="font-mono text-xs uppercase tracking-[0.2em] text-white hover:text-neutral-400 transition-colors border-b border-white pb-1 hover:border-neutral-400">
-                    [ Inspect Architecture ]
-                  </button>
+                  <a 
+                    href={project.link || '/projects'} 
+                    target={project.link ? '_blank' : undefined}
+                    rel={project.link ? 'noopener noreferrer' : undefined}
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-white hover:text-neutral-400 transition-colors border-b border-white pb-1 hover:border-neutral-400"
+                  >
+                    {project.link ? '[ View Live ]' : '[ Inspect Architecture ]'}
+                  </a>
                 </div>
               </div>
 
