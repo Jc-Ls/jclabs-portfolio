@@ -39,7 +39,7 @@ export default function SplashScreen() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, type: 'tween' },
     },
   };
 
@@ -49,7 +49,7 @@ export default function SplashScreen() {
       scale: 1,
       opacity: 1,
       rotate: 0,
-      transition: { duration: 1, ease: 'easeOut' },
+      transition: { duration: 1, type: 'tween' },
     },
   };
 
@@ -76,12 +76,12 @@ export default function SplashScreen() {
             <motion.div
               className="absolute inset-0 border-2 border-cyan-400 rounded-full"
               animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 3, repeat: Infinity, type: 'tween' }}
             />
             <motion.div
               className="absolute inset-2 border border-purple-400 rounded-full"
               animate={{ rotate: -360, scale: [1, 0.9, 1] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 4, repeat: Infinity, type: 'tween' }}
             />
             {/* Logo placeholder - will show actual logo */}
             <div className="absolute inset-4 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center text-white font-black text-xl">
