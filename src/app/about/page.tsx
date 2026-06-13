@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { PageHero } from '@/components/PageHero';
@@ -63,9 +65,9 @@ export default function AboutPage() {
           {/* Right Side: The Narrative */}
           <div className="space-y-12">
             <div>
-              <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 text-white leading-[1.1]">
+              <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent leading-[1.1]">
                 SYSTEMATIC <br/>
-                <span className="text-neutral-600">EXECUTION.</span>
+                <span className="text-cyan-300/80">EXECUTION.</span>
               </h1>
               <p className="text-lg text-neutral-400 font-light leading-relaxed">
                 My journey bridges public administration, healthcare infrastructure, and high-performance digital ecosystems. I do not just write code; I architect assets designed for absolute scale and zero-latency execution.
@@ -73,15 +75,15 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-8 font-mono text-sm">
-              <div className="border-l border-white/20 pl-6">
-                <h3 className="text-white uppercase tracking-widest mb-2 font-bold text-xs">The Crossover</h3>
-                <p className="text-neutral-500 leading-relaxed">
+              <div className="border-l border-cyan-500/30 pl-6 hover:border-cyan-400 transition-colors">
+                <h3 className="text-cyan-300 uppercase tracking-widest mb-2 font-bold text-xs">The Crossover</h3>
+                <p className="text-neutral-400 leading-relaxed hover:text-neutral-300 transition-colors">
                   Transitioning from public governance to full-stack engineering wasn't a career change—it was an evolution of solving complex systemic problems with flawless logic.
                 </p>
               </div>
-              <div className="border-l border-white/20 pl-6">
-                <h3 className="text-white uppercase tracking-widest mb-2 font-bold text-xs">Engineering Philosophy</h3>
-                <p className="text-neutral-500 leading-relaxed">
+              <div className="border-l border-cyan-500/30 pl-6 hover:border-cyan-400 transition-colors">
+                <h3 className="text-cyan-300 uppercase tracking-widest mb-2 font-bold text-xs">Engineering Philosophy</h3>
+                <p className="text-neutral-400 leading-relaxed hover:text-neutral-300 transition-colors">
                   Whether deploying a fintech protocol or a massive logistics engine, the standard remains the same: Enterprise-grade security, extreme reliability, and brutalist efficiency.
                 </p>
               </div>

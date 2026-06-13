@@ -8,22 +8,28 @@ const feedbacks = [
 
 export default function TestimonialsPage() {
   return (
-    <div className="min-h-screen bg-[#080B10] text-white p-6 md:p-24">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white p-6 md:p-24 selection:bg-cyan-400/30 selection:text-white">
       <div className="max-w-6xl mx-auto">
         <header className="mb-20 text-center">
-          <h2 className="text-[#FF8A00] text-xs font-bold uppercase tracking-[0.5em] mb-4">Verification</h2>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8">Trusted by Industry.</h1>
+          <h2 className="text-cyan-400 text-xs font-bold uppercase tracking-[0.5em] mb-4">Verification</h2>
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent mb-8">Trusted by Industry.</h1>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {feedbacks.map((item, i) => (
-            <div key={i} className="bg-[#111620] border border-white/5 p-12 rounded-3xl hover:border-[#00F0FF]/20 transition-all duration-500">
-              <p className="text-gray-300 text-lg leading-relaxed mb-10 font-light italic">"{item.quote}"</p>
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00F0FF] to-[#FF8A00]"></div>
-                <div>
-                  <h4 className="font-bold text-white tracking-wide">{item.name}</h4>
-                  <p className="text-gray-500 text-xs uppercase tracking-widest">{item.role}</p>
+            <div key={i} className="group relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm border border-cyan-500/20 hover:border-cyan-400/50 p-12 rounded-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              
+              <div className="relative z-10">
+                <p className="text-neutral-300 text-lg leading-relaxed mb-10 font-light italic">"{item.quote}"</p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 via-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-cyan-400/20">
+                    {item.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white tracking-wide group-hover:text-cyan-300 transition-colors">{item.name}</h4>
+                    <p className="text-neutral-400 text-xs uppercase tracking-widest">{item.role}</p>
+                  </div>
                 </div>
               </div>
             </div>

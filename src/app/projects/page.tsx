@@ -4,7 +4,7 @@ import { PROJECTS } from '@/constants/projects';
 
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-black text-white pt-32 pb-20 px-6 md:px-12 selection:bg-white selection:text-black">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20 px-6 md:px-12 selection:bg-cyan-400/30 selection:text-white">
       <div className="max-w-7xl mx-auto">
         
         {/* PAGE HEADER */}
@@ -13,9 +13,9 @@ export default function ProjectsPage() {
             <span className="w-2 h-2 bg-white"></span>
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-neutral-400">JCLs // Directory</span>
           </div>
-          <h1 className="text-4xl md:text-7xl font-black tracking-tighter text-white leading-[0.9]">
+          <h1 className="text-4xl md:text-7xl font-black tracking-tighter bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent leading-[0.9]">
             SYSTEM <br />
-            <span className="text-neutral-600">ARCHITECTURE.</span>
+            <span className="text-cyan-300/80">ARCHITECTURE.</span>
           </h1>
         </div>
 
@@ -35,19 +35,18 @@ export default function ProjectsPage() {
                     priority={index === 0}
                     quality={85}
                     sizes="(max-width: 768px) 100vw, 60vw"
-                    className="object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                    className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
-                  {/* Brutalist Corner Accents */}
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/50 opacity-0 group-hover:opacity-100 transition-opacity m-4"></div>
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white/50 opacity-0 group-hover:opacity-100 transition-opacity m-4"></div>
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/0 to-purple-500/0 group-hover:from-cyan-500/10 group-hover:to-purple-500/10 transition-all duration-500"></div>
                 </div>
               </div>
 
               {/* Right Side: Project Data */}
               <div className={`lg:col-span-5 flex flex-col justify-center ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest">{project.id} //</span>
-                  <span className="font-mono text-[9px] uppercase tracking-widest px-3 py-1 border border-white/10 text-neutral-400">
+                  <span className="font-mono text-xs text-cyan-300/60 uppercase tracking-widest">{project.id} //</span>
+                  <span className="font-mono text-[9px] uppercase tracking-widest px-3 py-1 border border-cyan-500/30 text-cyan-300/80 bg-cyan-500/5 rounded">
                     {project.status}
                   </span>
                 </div>
@@ -67,7 +66,7 @@ export default function ProjectsPage() {
                 {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-3 mb-8">
                   {project.tech.map((tech, i) => (
-                    <span key={i} className="text-[10px] font-mono text-white bg-white/5 px-3 py-1 uppercase tracking-widest">
+                    <span key={i} className="text-[10px] font-mono text-cyan-200 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 uppercase tracking-widest rounded hover:bg-cyan-500/20 transition-colors">
                       {tech}
                     </span>
                   ))}

@@ -39,7 +39,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white pt-32 pb-20 px-6 md:px-12 selection:bg-white selection:text-black">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-32 pb-20 px-6 md:px-12 selection:bg-cyan-400/30 selection:text-white">
       <div className="max-w-3xl mx-auto">
         <PageHero
           title="INITIATE"
@@ -48,53 +48,56 @@ export default function ContactPage() {
           description="Available for enterprise architecture roles, technical co-founder positions, and high-level SaaS consulting."
         />
 
-        {/* Brutalist Contact Form */}
-        <div className="bg-[#050505] border border-white/10 p-8">
-          <form onSubmit={handleSubmit} className="space-y-8 font-mono text-sm">
-            <div>
-              <label className="block text-[10px] uppercase tracking-widest text-neutral-500 mb-2">Identify (Name / Org)</label>
+        {/* Modern Glassmorphism Contact Form */}
+        <div className="relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-xl border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-300 p-8 rounded-xl shadow-2xl shadow-cyan-500/10">
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/5 to-purple-500/5 rounded-xl"></div>
+          
+          <form onSubmit={handleSubmit} className="relative z-10 space-y-8 font-mono text-sm">
+            <div className="group">
+              <label className="block text-[10px] uppercase tracking-widest text-cyan-300 mb-3 group-hover:text-cyan-200 transition-colors">Your Name / Organization</label>
               <input
                 type="text"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-black border-b border-white/20 p-3 text-white focus:outline-none focus:border-white transition-colors"
-                placeholder="e.g. Acme Corp"
+                className="w-full bg-slate-900/50 border-b-2 border-cyan-500/30 hover:border-cyan-400/60 focus:border-cyan-400 p-3 text-white placeholder:text-neutral-500 focus:outline-none transition-all duration-200 focus:bg-slate-900/70"
+                placeholder="e.g., Acme Corp"
               />
             </div>
-            <div>
-              <label className="block text-[10px] uppercase tracking-widest text-neutral-500 mb-2">Return Vector (Email)</label>
+            <div className="group">
+              <label className="block text-[10px] uppercase tracking-widest text-cyan-300 mb-3 group-hover:text-cyan-200 transition-colors">Email Address</label>
               <input
                 type="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-black border-b border-white/20 p-3 text-white focus:outline-none focus:border-white transition-colors"
+                className="w-full bg-slate-900/50 border-b-2 border-cyan-500/30 hover:border-cyan-400/60 focus:border-cyan-400 p-3 text-white placeholder:text-neutral-500 focus:outline-none transition-all duration-200 focus:bg-slate-900/70"
                 placeholder="director@acme.com"
               />
             </div>
-            <div>
-              <label className="block text-[10px] uppercase tracking-widest text-neutral-500 mb-2">Directives (Project Scope)</label>
+            <div className="group">
+              <label className="block text-[10px] uppercase tracking-widest text-cyan-300 mb-3 group-hover:text-cyan-200 transition-colors">Project Details</label>
               <textarea
                 rows={4}
                 required
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-black border-b border-white/20 p-3 text-white focus:outline-none focus:border-white transition-colors resize-none"
-                placeholder="Detail your system requirements..."
+                className="w-full bg-slate-900/50 border-b-2 border-cyan-500/30 hover:border-cyan-400/60 focus:border-cyan-400 p-3 text-white placeholder:text-neutral-500 focus:outline-none transition-all duration-200 resize-none focus:bg-slate-900/70"
+                placeholder="Tell me about your project scope, goals, and vision..."
               />
             </div>
 
             {/* Error/Success Messages */}
-            {error && <p className="text-red-500 text-xs font-mono uppercase tracking-widest">{error}</p>}
-            {success && <p className="text-green-500 text-xs font-mono uppercase tracking-widest">✓ Message transmitted successfully</p>}
+            {error && <div className="p-3 bg-red-500/10 border border-red-500/30 rounded text-red-300 text-xs font-mono uppercase tracking-widest">{error}</div>}
+            {success && <div className="p-3 bg-green-500/10 border border-green-500/30 rounded text-green-300 text-xs font-mono uppercase tracking-widest">✓ Message transmitted successfully</div>}
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-white text-black font-bold tracking-widest uppercase py-4 text-xs hover:bg-neutral-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-black font-bold tracking-widest uppercase py-4 text-xs rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-cyan-500/30"
             >
-              {loading ? '[ TRANSMITTING... ]' : '[ Transmit Data ]'}
+              {loading ? '[ TRANSMITTING... ]' : '[ Send Message ]'}
             </button>
           </form>
         </div>

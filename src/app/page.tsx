@@ -4,7 +4,7 @@ import { HOMEPAGE_PROJECTS } from '@/constants/projects';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black pt-24 pb-20 overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white selection:bg-cyan-400/30 selection:text-white pt-24 pb-20 overflow-hidden">
       
       {/* 1. BRUTALIST HERO SECTION */}
       <section className="relative px-6 md:px-12 max-w-7xl mx-auto mb-32 pt-8">
@@ -23,9 +23,9 @@ export default function HomePage() {
             </Reveal>
             
             <Reveal delay={200}>
-              <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9] mb-8 mt-4 md:mt-0">
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent leading-[0.9] mb-8 mt-4 md:mt-0">
                 ENGINEERING <br />
-                <span className="text-neutral-600">ABSOLUTE</span> <br />
+                <span className="text-cyan-300/80">ABSOLUTE</span> <br />
                 SCALE.
               </h1>
             </Reveal>
@@ -77,14 +77,14 @@ export default function HomePage() {
             </div>
             
             {/* 1px Border Grid System - Staggered Animations */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gradient-to-b from-cyan-500/10 to-purple-500/10 border border-cyan-500/20">
               {HOMEPAGE_PROJECTS.map((project, idx) => (
                 <Reveal key={idx} delay={idx * 100}>
-                  <a href="/projects" className="group bg-black p-8 hover:bg-white/5 transition-colors flex flex-col justify-between min-h-[200px] h-full block">
+                  <a href="/projects" className="group bg-slate-900/50 backdrop-blur-sm p-8 hover:bg-cyan-500/5 border border-transparent group-hover:border-cyan-500/30 transition-all duration-300 flex flex-col justify-between min-h-[200px] h-full block">
                     <div>
                       <div className="flex justify-between items-start mb-4">
-                        <div className="w-1.5 h-1.5 bg-neutral-700 group-hover:bg-white transition-colors"></div>
-                        <span className="font-mono text-[9px] uppercase tracking-widest text-neutral-600 group-hover:text-neutral-400 transition-colors">{project.status}</span>
+                        <div className="w-2 h-2 bg-cyan-400 group-hover:bg-purple-400 transition-colors rounded-full"></div>
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-cyan-300/60 group-hover:text-purple-300 transition-colors">{project.status}</span>
                       </div>
                       <h3 className="text-xl font-bold text-white tracking-tight mb-2">{project.name}</h3>
                       <p className="text-xs font-mono text-neutral-500 uppercase tracking-widest">{project.type}</p>

@@ -78,19 +78,8 @@ export const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative w-10 h-10">
-                {/* Try to load actual logo, fallback to text */}
-                <Image
-                  src="/logos/jcls-logo.png"
-                  alt="JCLs Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-                {/* Fallback logo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-purple-600 rounded flex items-center justify-center text-white font-black text-xs">
-                  JCLs
-                </div>
+              <div className="relative w-10 h-10 bg-gradient-to-br from-cyan-400 via-blue-400 to-purple-600 rounded flex items-center justify-center text-white font-black text-xs shadow-lg shadow-cyan-400/30">
+                JCLs
               </div>
               <motion.span
                 className="font-black text-lg tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 hidden sm:inline"
